@@ -45,3 +45,22 @@ V4 VISUAL UPDATE
 - Stronger gold/blue executive sci-fi styling.
 - Hotel hologram still uses the supplied resort photograph.
 - Added a visible Hidden Droid Encounter collection on Home.
+
+
+V4.1 GITHUB PAGES FIX
+This package is intentionally FLAT: every file belongs in the root of your GitHub repository.
+Do not put hotel.webp or icons into subfolders for this version.
+
+Your repository root should show:
+- index.html
+- styles.css
+- app.js
+- manifest.json
+- sw.js
+- hotel.webp
+- icon.svg
+- icon-192.png
+- icon-512.png
+- README.txt
+
+This fixes the missing hotel image on GitHub Pages.
