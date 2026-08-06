@@ -589,3 +589,34 @@ body{background:radial-gradient(circle at 50% -8%,#0c2940 0,#020810 36%,#010307 
 @media(min-width:431px){
   .ref-holo img{object-fit:cover !important}
 }
+
+
+/* ===== V5.1 CLEAN LOGIN + HOLOGRAM ===== */
+.code-login{display:grid;gap:10px}
+.code-login input{
+  text-align:center;
+  font-size:24px;
+  letter-spacing:8px;
+  font-weight:700;
+}
+.code-actions{margin-top:8px;margin-bottom:0}
+
+/* No oval rings, grids, scan shapes, or overlay animation over the approved hologram. */
+.ref-holo::before,
+.ref-holo::after,
+.hotel-holo::before,
+.hotel-holo::after,
+.ref-holo .holo-grid,
+.ref-holo .holo-ring,
+.ref-holo .holo-label,
+.hotel-holo .holo-grid,
+.hotel-holo .holo-ring,
+.hotel-holo .holo-label{
+  display:none !important;
+  content:none !important;
+}
+.ref-holo img,
+.hotel-holo img{
+  filter:none !important;
+  animation:none !important;
+}

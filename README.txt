@@ -1,46 +1,18 @@
-APEX COMMAND v5.0 — FINAL TEST BUILD
+APEX COMMAND v5.1
 
-THIS BUILD USES THE EXACT HOLOGRAM IMAGE YOU APPROVED:
-hotel-hologram.jpg
+CHANGES
+- Removed built-in demo/fake captures.
+- Removed built-in demo follow-ups.
+- Known demo records from older builds are automatically cleaned from localStorage.
+- Login is now access-code only.
+- First launch: choose any 4–6 digit numeric code.
+- Future launches require the same local code.
+- Removed oval rings, grid overlays, and scan shapes over the hotel hologram.
+- Keeps the approved hotel-hologram.jpg unobstructed.
+- All existing app pages and functions remain intact.
 
-UPLOAD EVERY FILE IN THIS ZIP DIRECTLY TO THE ROOT OF YOUR GITHUB REPOSITORY.
+UPLOAD
+Upload every file in this ZIP directly to the ROOT of the GitHub repository and replace the old versions.
 
-Files:
-- index.html
-- styles.css
-- app.js
-- manifest.json
-- sw.js
-- hotel-hologram.jpg
-- apple-touch-icon.png
-- favicon.png
-- icon-192.png
-- icon-512.png
-- icon.svg
-- README.txt
-
-FUNCTIONAL FEATURES
-- Login screen and locally saved test password
-- Home dashboard matching the approved design
-- Exact approved hotel hologram image
-- Apex AI on-device test assistant
-- Captures
-- Follow-Ups
-- Reports with print/save-PDF support
-- Timeline
-- Outlets
-- Documents
-- Hidden droid encounters
-- Persistent local app data
-- Working iPhone PWA icons
-- Five-button bottom navigation matching the approved Home design
-- Timeline, Outlets, and Documents remain accessible from the hamburger menu
-
-IMPORTANT FOR IPHONE
-After uploading:
-1. Wait for GitHub Pages to deploy.
-2. Open the site in Safari and refresh.
-3. If Apex Command is already on your Home Screen, delete that old Home Screen copy.
-4. Use Safari Share > Add to Home Screen again so iOS picks up the current icon/build.
-
-This testing build deliberately avoids persistent service-worker caching so GitHub updates appear reliably.
+IPHONE
+After GitHub deploys, refresh Safari. If installed to Home Screen and it appears stale, delete the old Home Screen copy and Add to Home Screen again.

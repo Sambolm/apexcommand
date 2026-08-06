@@ -4,16 +4,9 @@ const $$ = (s, root=document) => [...root.querySelectorAll(s)];
 const STORAGE = 'apexCommandV3';
 
 const defaults = {
-  user: {name:'Teri', passwordHash:null, remember:true},
-  captures: [
-    {id:1,outlet:'360',type:'Recognition',person:'',priority:'Normal',notes:'Great teamwork during rush',time:Date.now()-3600*1000*2},
-    {id:2,outlet:'Waterfront',type:'Guest Experience',person:'',priority:'Normal',notes:'Guest recovery win',time:Date.now()-3600*1000*3}
-  ],
-  followups: [
-    {id:1,title:'Follow up on training',outlet:'360',owner:'Maria S.',due:'',priority:'High',status:'open',time:Date.now()-86400000},
-    {id:2,title:'Review menu timing',outlet:'Waterfront',owner:'James T.',due:'',priority:'Medium',status:'open',time:Date.now()-86400000*2},
-    {id:3,title:'New hire check-in',outlet:"J's",owner:'Alex R.',due:'',priority:'Medium',status:'open',time:Date.now()-86400000*3}
-  ],
+  user: {name:'Teri', codeHash:null, remember:true},
+  captures: [],
+  followups: [],
   outlets: [
     {name:'360',status:'Operational',score:88},
     {name:'Waterfront',status:'Operational',score:82},
@@ -34,6 +27,15 @@ const defaults = {
 
 let state = loadState();
 let followFilter = 'open';
+
+function cleanLegacyDemoData(){
+  const demoCaptureNotes=new Set(['Great teamwork during rush','Guest recovery win']);
+  state.captures=(state.captures||[]).filter(c=>!demoCaptureNotes.has(c.notes));
+  const demoFollowups=new Set(['Follow up on training','Review menu timing','New hire check-in']);
+  state.followups=(state.followups||[]).filter(f=>!demoFollowups.has(f.title));
+  saveState();
+}
+
 
 function clone(o){return JSON.parse(JSON.stringify(o))}
 function loadState(){
@@ -63,36 +65,43 @@ function setupAuth(){
   if(logged) showApp(); else showLogin();
 }
 function showLogin(){
-  $('#loginView').classList.remove('hidden'); $('#appView').classList.add('hidden');
-  $('#firstRunNote').classList.toggle('hidden', !!state.user.passwordHash);
+  $('#loginView').classList.remove('hidden');
+  $('#appView').classList.add('hidden');
+  $('#firstRunNote').classList.toggle('hidden', !!state.user.codeHash);
 }
 function showApp(){
-  $('#loginView').classList.add('hidden'); $('#appView').classList.remove('hidden');
-  renderAll(); go('home');
+  $('#loginView').classList.add('hidden');
+  $('#appView').classList.remove('hidden');
+  renderAll();
+  go('home');
 }
 $('#loginForm').addEventListener('submit', async e=>{
   e.preventDefault();
-  const user=$('#loginUser').value.trim();
-  const pass=$('#loginPass').value;
-  if(user.toLowerCase()!=='teri') return toast('User not recognized in this test build.');
-  if(!pass) return toast('Enter a password.');
-  const hash=await hashText(pass);
-  if(!state.user.passwordHash){
-    state.user.passwordHash=hash; toast('Local test password created.');
-  }else if(state.user.passwordHash!==hash){
-    return toast('Incorrect password.');
+  const code=$('#loginCode').value.trim();
+  if(!/^\d{4,6}$/.test(code)) return toast('Enter a 4–6 digit access code.');
+  const hash=await hashText(code);
+  if(!state.user.codeHash){
+    state.user.codeHash=hash;
+    toast('Local access code created.');
+  }else if(state.user.codeHash!==hash){
+    return toast('Incorrect access code.');
   }
-  state.user.remember=$('#rememberMe').checked;
+  state.user.remember=true;
   state.auth.loggedIn=true;
-  saveState(); showApp();
+  saveState();
+  showApp();
 });
 $('#resetPasswordBtn').addEventListener('click',()=>{
-  if(confirm('Reset the locally stored test password?')){
-    state.user.passwordHash=null; state.auth.loggedIn=false; saveState(); $('#loginPass').value=''; $('#firstRunNote').classList.remove('hidden'); toast('Local password reset.');
+  if(confirm('Reset the locally stored Apex Command access code?')){
+    state.user.codeHash=null;
+    state.auth.loggedIn=false;
+    saveState();
+    $('#loginCode').value='';
+    $('#firstRunNote').classList.remove('hidden');
+    toast('Local access code reset.');
   }
 });
-$('#biometricBtn').addEventListener('click',()=>{
-  if(!state.user.passwordHash) return toast('Create a local password first.');
+  if(!state.user.codeHash) return toast('Create a local password first.');
   toast('Device sign-in requires native app credentials. Use password in this PWA test build.');
 });
 $('#logoutBtn').addEventListener('click',()=>{state.auth.loggedIn=false;saveState();$('#drawer').classList.add('hidden');showLogin()});
@@ -309,4 +318,5 @@ function renderGreeting(){
 }
 function renderAll(){populateOutletSelects();renderGreeting();renderHome();renderCaptures();renderFollowups();renderReports();renderTimeline();renderOutlets();renderDocuments();renderDroidRoster();saveState()}
 
+cleanLegacyDemoData();
 setupAuth();

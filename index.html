@@ -37,23 +37,31 @@ if ('serviceWorker' in navigator) {
 
       <p class="auth-copy">Director-level leadership. Operational excellence. Stronger outlets. Stronger teams.</p>
 
-      <form id="loginForm" class="auth-form">
-        <label>USER</label>
-        <input id="loginUser" autocomplete="username" value="Teri" aria-label="User">
-        <label>PASSWORD</label>
-        <input id="loginPass" type="password" autocomplete="current-password" placeholder="Enter password" aria-label="Password">
-        <div class="auth-row">
-          <label class="check"><input id="rememberMe" type="checkbox" checked> Remember me</label>
-          <button type="button" class="link-btn" id="resetPasswordBtn">Reset local password</button>
-        </div>
-        <button class="gold-btn" type="submit">SIGN IN</button>
-      </form>
+      
+<form id="loginForm" class="auth-form code-login">
+  <label>ACCESS CODE</label>
+  <input
+    id="loginCode"
+    type="password"
+    inputmode="numeric"
+    pattern="[0-9]*"
+    maxlength="6"
+    autocomplete="one-time-code"
+    placeholder="Enter code"
+    aria-label="Access Code">
+  <button class="gold-btn" type="submit">ENTER APEX COMMAND</button>
+</form>
+<div class="auth-row code-actions">
+  <span></span>
+  <button type="button" class="link-btn" id="resetPasswordBtn">Reset local code</button>
+</div>
 
-      <button class="ghost-btn" id="biometricBtn" type="button">◎ SIGN IN WITH DEVICE</button>
+
+      
       <div id="firstRunNote" class="first-run-note">
-        First launch: enter any password you want. Apex Command will save it only on this device for testing.
+        First launch: choose a 4–6 digit access code. Apex Command saves it only on this device for testing.
       </div>
-      <div class="secure-note">Local test build • Offline capable • Your data stays on this device</div>
+      <div class="secure-note">Local test build • Access code stored only on this device</div>
     </main>
   </div>
 
@@ -82,10 +90,6 @@ if ('serviceWorker' in navigator) {
 
             <button class="hotel-holo" id="hotelHoloBtn" aria-label="Open outlet overview">
               <img src="hotel-hologram.jpg?v=50" alt="Resort hologram">
-              <div class="holo-grid"></div>
-              <div class="holo-ring r1"></div>
-              <div class="holo-ring r2"></div>
-              <div class="holo-label">OPERATIONS ONLINE</div>
             </button>
           </div>
 
