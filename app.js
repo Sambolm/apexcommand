@@ -135,7 +135,7 @@ function renderHome(){
   $('#metricReports').textContent=reportsWeek;
 
   $('#homeCaptureList').innerHTML=state.captures.slice().sort((a,b)=>b.time-a.time).slice(0,4).map(c=>`
-    <div class="list-row"><div class="list-main"><b>${escapeHtml(c.outlet)} — ${escapeHtml(c.notes)}</b><small>${escapeHtml(c.type)} • ${fmt(c.time)}</small></div><span class="status ${c.priority==='Critical'||c.priority==='High'?'bad':c.priority==='Medium'?'warn':'ok'}">●</span></div>`).join('') || '<div class="list-row">No captures yet.</div>';
+    <div class="list-row"><div class="list-main"><b>${escapeHtml(c.outlet)} — ${escapeHtml(c.notes)}</b><small>${escapeHtml(c.type)} • ${fmt(c.time)}</small></div><span class="status ${c.priority==='Critical'||c.priority==='High'?'bad':c.priority==='Medium'?'warn':'ok'}">●</span></div>`).join('') || '<div class="empty-capture"><div style="font-size:42px;color:#25afff">▱</div><div style="color:#43c7ff;font-size:20px;margin-top:8px">No captures yet.</div><small style="color:#c4d0d7;font-size:13px;line-height:1.5">Start capturing moments,<br>insights, or observations.</small></div>';
 
   $('#homeOutletList').innerHTML=state.outlets.map(o=>`
     <div class="list-row"><div class="list-main"><b>${escapeHtml(o.name)}</b><small class="${o.status==='Operational'?'ok':'warn'}">${escapeHtml(o.status)}</small></div><span class="${o.status==='Operational'?'ok':'warn'}">${o.score}%</span></div>`).join('');
@@ -302,14 +302,10 @@ function downloadFile(name,content,type){
   const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)
 }
 function renderGreeting(){
-  const h=new Date().getHours();$('#greeting').textContent=`Good ${h<12?'morning':h<17?'afternoon':'evening'}, Teri.`;
-  const quotes=[
-    'I’ve calculated the odds of today going exactly as planned. I recommend we don’t discuss the odds.',
-    'Strong leadership: because apparently the operation refuses to run itself.',
-    'Today’s forecast: 100% chance someone will need a decision.',
-    'Operational excellence activated. Coffee levels remain unverified.'
-  ];
-  $('#dailyQuote').textContent=quotes[new Date().getDate()%quotes.length];
+  const h=new Date().getHours();
+  const period=h<12?'morning':h<17?'afternoon':'evening';
+  $('#greeting').innerHTML=`Good ${period},<br>Teri.`;
+  $('#dailyQuote').innerHTML=`Today’s forecast:<br>100% chance someone<br>will need a decision.`;
 }
 function renderAll(){populateOutletSelects();renderGreeting();renderHome();renderCaptures();renderFollowups();renderReports();renderTimeline();renderOutlets();renderDocuments();renderDroidRoster();saveState()}
 

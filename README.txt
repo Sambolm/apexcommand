@@ -35,3 +35,24 @@ AFTER UPLOAD
    iOS often keeps an old home-screen icon even after the website files change.
 
 The resort hologram is now a normal JPEG at the repository root for maximum iPhone compatibility.
+
+
+V4.4 TRUE HOLOGRAM
+- New hotel-hologram.png generated from the resort image as cyan line-art.
+- Strong glow, animated scan line, projection rings and HUD grid.
+- The app now displays hotel-hologram.png instead of the normal hotel photo.
+- Upload EVERY file in this ZIP to the GitHub repository root.
+
+
+V4.5 INDEX / HOME VISUAL MATCH
+- The actual index.html Home screen has been rebuilt to match the approved reference image.
+- Resort hologram remains a real interactive app element using hotel-hologram.png.
+- Layout now mirrors the reference: greeting left, large hologram right, four priority cards, split captures/outlets section, AI card, quick actions and droid alert.
+- All buttons remain functional and connected to the existing app pages.
+
+
+V4.6 EXACT HOLOGRAM MATCH
+- hotel-hologram-exact.jpg is cropped directly from the approved reference image.
+- The index Home screen now displays that finished hologram graphic exactly, instead of trying to recreate it with CSS filters.
+- Login screen uses the same finished hologram.
+- Upload every file in this ZIP to the repository root.
