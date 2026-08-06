@@ -312,5 +312,5 @@ function renderGreeting(){
   $('#dailyQuote').textContent=quotes[new Date().getDate()%quotes.length];
 }
 function renderAll(){populateOutletSelects();renderGreeting();renderHome();renderCaptures();renderFollowups();renderReports();renderTimeline();renderOutlets();renderDocuments();renderDroidRoster();saveState()}
-if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
+
 setupAuth();
