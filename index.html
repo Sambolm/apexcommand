@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-title" content="Apex Command">
   <title>Apex Command</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="favicon.png?v=44">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=44">
+  <link rel="icon" href="favicon.png?v=50">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=50">
   <link rel="stylesheet" href="styles.css">
 
 <script>
@@ -31,7 +31,7 @@ if ('serviceWorker' in navigator) {
       <div class="auth-tag">LEAD • ALIGN • ELEVATE</div>
 
       <div class="auth-hotel-wrap">
-        <img src="hotel-hologram-exact.jpg?v=46" alt="Resort" class="auth-hotel">
+        <img src="hotel-hologram.jpg?v=50" alt="Resort" class="auth-hotel">
         <div class="scanlines"></div>
       </div>
 
@@ -81,7 +81,7 @@ if ('serviceWorker' in navigator) {
             </div>
 
             <button class="hotel-holo" id="hotelHoloBtn" aria-label="Open outlet overview">
-              <img src="hotel-hologram-exact.jpg?v=46" alt="Resort hologram">
+              <img src="hotel-hologram.jpg?v=50" alt="Resort hologram">
               <div class="holo-grid"></div>
               <div class="holo-ring r1"></div>
               <div class="holo-ring r2"></div>
@@ -212,9 +212,6 @@ if ('serviceWorker' in navigator) {
         <button data-go="captures"><i>◎</i><span>CAPTURES</span></button>
         <button data-go="followups"><i>✓</i><span>FOLLOW-UPS</span></button>
         <button data-go="reports"><i>▥</i><span>REPORTS</span></button>
-        <button data-go="timeline"><i>◷</i><span>TIMELINE</span></button>
-        <button data-go="outlets"><i>⌖</i><span>OUTLETS</span></button>
-        <button data-go="documents"><i>▤</i><span>DOCS</span></button>
       </nav>
     </div>
   </div>
@@ -253,14 +250,14 @@ if ('serviceWorker' in navigator) {
 
 <script>
 window.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('img[src*="hotel-hologram.png"]').forEach(function(img){
+  document.querySelectorAll('img[src*="hotel-hologram.jpg"]').forEach(function(img){
     img.addEventListener('error', function(){
       this.style.display='none';
       const box=this.parentElement;
       if(box && !box.querySelector('.hotel-load-error')){
         const msg=document.createElement('div');
         msg.className='hotel-load-error';
-        msg.textContent='Resort hologram could not load: hotel-hologram.png';
+        msg.textContent='Resort hologram could not load: hotel-hologram.jpg';
         msg.style.cssText='position:absolute;inset:0;display:grid;place-items:center;color:#7bdcff;font-size:12px;padding:20px;text-align:center;';
         box.appendChild(msg);
       }

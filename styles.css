@@ -466,14 +466,14 @@ body{background:radial-gradient(circle at 50% -8%,#0c2940 0,#020810 36%,#010307 
 .empty-capture small{display:block;margin-top:8px}
 
 
-/* ===== V4.6 EXACT APPROVED HOLOGRAM ===== */
-.ref-holo{
-  overflow:hidden !important;
+/* ===== APEX COMMAND V5.0 — APPROVED HOLOGRAM FINAL ===== */
+.ref-holo,
+.auth-hotel-wrap{
   background:#01050a !important;
-  border:none !important;
-  box-shadow:none !important;
+  overflow:hidden !important;
 }
-.ref-holo img{
+.ref-holo img,
+.auth-hotel{
   width:100% !important;
   height:100% !important;
   object-fit:cover !important;
@@ -488,26 +488,104 @@ body{background:radial-gradient(circle at 50% -8%,#0c2940 0,#020810 36%,#010307 
 .ref-holo::after,
 .ref-holo .holo-grid,
 .ref-holo .holo-ring,
-.ref-holo .holo-label{
-  display:none !important;
-}
-
-/* Login screen uses the same finished hologram look. */
-.auth-hotel-wrap{
-  background:#01050a !important;
-}
-.auth-hotel{
-  content:url("hotel-hologram-exact.jpg?v=46");
-  object-fit:cover !important;
-  object-position:center center !important;
-  opacity:1 !important;
-  mix-blend-mode:normal !important;
-  filter:none !important;
-  transform:none !important;
-  animation:none !important;
-}
+.ref-holo .holo-label,
 .auth-hotel-wrap::before,
 .auth-hotel-wrap::after,
 .auth-hotel-wrap .scanlines{
   display:none !important;
+}
+
+/* Make the Home screen track the approved reference closely. */
+@media(max-width:430px){
+  #pageHost{padding-left:0 !important;padding-right:0 !important}
+  .reference-home{padding:0 11px 10px !important}
+  .ref-hero{
+    margin:0 -11px !important;
+    grid-template-columns:34% 66% !important;
+    min-height:350px !important;
+    overflow:hidden !important;
+  }
+  .ref-copy{padding:24px 0 0 15px !important}
+  .ref-copy h1{
+    font-size:28px !important;
+    line-height:1.18 !important;
+    font-weight:500 !important;
+    margin-bottom:19px !important;
+  }
+  .ref-copy .sub{
+    font-size:13px !important;
+    line-height:1.72 !important;
+  }
+  .ref-quote{
+    margin-top:17px !important;
+    padding:12px 10px !important;
+    border-radius:14px !important;
+  }
+  .ref-quote #dailyQuote{
+    font-size:12px !important;
+    line-height:1.55 !important;
+  }
+  .ref-quote small{font-size:11px !important}
+  .ref-holo{
+    height:350px !important;
+    border:0 !important;
+    border-radius:0 !important;
+  }
+  .ref-section-head{margin:15px 2px 8px !important}
+  .ref-section-head b{font-size:14px !important}
+  .ref-section-head button{font-size:12px !important}
+
+  .ref-priority-grid{
+    grid-template-columns:repeat(4,1fr) !important;
+    gap:6px !important;
+  }
+  .ref-priority-grid .metric{
+    min-height:106px !important;
+    padding:10px 3px 8px !important;
+  }
+  .ref-priority-grid .metric strong{font-size:29px !important}
+  .ref-priority-grid .metric span{font-size:7.5px !important}
+  .ref-priority-grid .metric i{font-size:17px !important}
+
+  .ref-midgrid{grid-template-columns:1fr 1fr !important;gap:7px !important}
+  .ref-captures-panel{min-height:168px !important}
+  .ref-outlet-panel .list-row{min-height:44px !important;padding:7px 8px !important}
+  .ref-outlet-panel .list-main b{font-size:11px !important}
+  .ref-outlet-panel .list-main small{font-size:8px !important}
+  .ref-outlet-panel .list-row>span:last-child{font-size:14px !important}
+
+  .ref-ai-launch{min-height:76px !important}
+  .ref-ai-launch .ai-orb{width:44px !important;height:44px !important;flex-basis:44px !important}
+  .ref-ai-launch b{font-size:10px !important}
+  .ref-ai-launch span{font-size:11px !important}
+
+  .ref-quick-grid{
+    grid-template-columns:repeat(3,1fr) !important;
+    gap:7px !important;
+  }
+  .ref-quick-grid .quick{
+    min-height:76px !important;
+    padding:9px !important;
+    grid-template-columns:30px 1fr !important;
+  }
+  .ref-quick-grid .quick>span{font-size:23px !important}
+  .ref-quick-grid .quick b{font-size:9px !important}
+  .ref-quick-grid .quick small{font-size:8px !important}
+
+  .ref-droid-signal{
+    min-height:82px !important;
+    grid-template-columns:45px 1fr 112px !important;
+    padding:10px !important;
+  }
+  .ref-droid-signal .mini-droid{width:42px !important;height:42px !important}
+  .ref-droid-signal b{font-size:10px !important}
+  .ref-droid-signal span{font-size:8px !important}
+  .ref-droid-signal strong{font-size:10px !important;padding:11px 5px !important}
+
+  .bottom-nav button{min-width:20% !important}
+}
+
+/* Desktop/tablet keeps the same finished hologram composition. */
+@media(min-width:431px){
+  .ref-holo img{object-fit:cover !important}
 }
