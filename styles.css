@@ -620,3 +620,22 @@ body{background:radial-gradient(circle at 50% -8%,#0c2940 0,#020810 36%,#010307 
   filter:none !important;
   animation:none !important;
 }
+
+
+/* ===== V5.2 ACCESS CODE FIX ===== */
+.code-login input#loginCode{
+  font-size:17px !important;
+  letter-spacing:4px !important;
+  font-weight:600 !important;
+  min-height:50px;
+  padding:11px 14px !important;
+}
+.code-login input#loginCode::placeholder{
+  font-size:15px !important;
+  letter-spacing:0 !important;
+  font-weight:500 !important;
+  color:#718794;
+}
+.code-login .gold-btn{
+  margin-top:3px;
+}

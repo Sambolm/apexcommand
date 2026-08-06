@@ -1,18 +1,17 @@
-APEX COMMAND v5.1
+APEX COMMAND v5.2 — LOGIN FIX
 
-CHANGES
-- Removed built-in demo/fake captures.
-- Removed built-in demo follow-ups.
-- Known demo records from older builds are automatically cleaned from localStorage.
-- Login is now access-code only.
-- First launch: choose any 4–6 digit numeric code.
-- Future launches require the same local code.
-- Removed oval rings, grid overlays, and scan shapes over the hotel hologram.
-- Keeps the approved hotel-hologram.jpg unobstructed.
-- All existing app pages and functions remain intact.
+FIXED
+- Corrected a JavaScript syntax error left behind by the old biometric login code.
+- Access-code login now works.
+- Login is still code-only: choose a 4–6 digit code on first use.
+- Reduced the Access Code input font and spacing.
+- Placeholder text is now smaller and cleaner.
+- Old demo captures/follow-ups remain removed.
+- Approved hotel hologram remains unobstructed with no oval overlays.
+- JavaScript was syntax-checked before packaging.
 
 UPLOAD
-Upload every file in this ZIP directly to the ROOT of the GitHub repository and replace the old versions.
+Replace every file in the GitHub repository root with this ZIP's files.
 
-IPHONE
-After GitHub deploys, refresh Safari. If installed to Home Screen and it appears stale, delete the old Home Screen copy and Add to Home Screen again.
+IF THE OLD BUILD IS INSTALLED ON IPHONE
+After GitHub deploys, open the site in Safari and refresh. If the Home Screen app remains stale, delete it and Add to Home Screen again.

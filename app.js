@@ -61,7 +61,8 @@ async function hashText(text){
 }
 
 function setupAuth(){
-  const logged = state.auth.loggedIn && state.user.remember;
+  // A valid access code is required before auto-login is allowed.
+  const logged = state.auth.loggedIn && state.user.remember && !!state.user.codeHash;
   if(logged) showApp(); else showLogin();
 }
 function showLogin(){
@@ -94,15 +95,13 @@ $('#loginForm').addEventListener('submit', async e=>{
 $('#resetPasswordBtn').addEventListener('click',()=>{
   if(confirm('Reset the locally stored Apex Command access code?')){
     state.user.codeHash=null;
+    delete state.user.passwordHash;
     state.auth.loggedIn=false;
     saveState();
     $('#loginCode').value='';
     $('#firstRunNote').classList.remove('hidden');
     toast('Local access code reset.');
   }
-});
-  if(!state.user.codeHash) return toast('Create a local password first.');
-  toast('Device sign-in requires native app credentials. Use password in this PWA test build.');
 });
 $('#logoutBtn').addEventListener('click',()=>{state.auth.loggedIn=false;saveState();$('#drawer').classList.add('hidden');showLogin()});
 
