@@ -64,3 +64,10 @@ Your repository root should show:
 - README.txt
 
 This fixes the missing hotel image on GitHub Pages.
+
+
+V4.2 RESORT HOLOGRAM FIX
+The resort photo is now embedded directly inside index.html.
+There is no image path to break and no separate image upload is required for the hologram.
+You may still upload hotel.webp, but the app no longer depends on it.
+Replace index.html and sw.js at minimum, or upload this entire package.
