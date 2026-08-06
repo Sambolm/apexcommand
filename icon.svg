@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><defs><radialGradient id="bg"><stop stop-color="#18344b"/><stop offset=".48" stop-color="#07101a"/><stop offset="1" stop-color="#010305"/></radialGradient><linearGradient id="g" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#fff1a3"/><stop offset=".28" stop-color="#efbd50"/><stop offset=".58" stop-color="#9b641b"/><stop offset=".82" stop-color="#f5c75c"/><stop offset="1" stop-color="#6c4312"/></linearGradient><filter id="x"><feGaussianBlur stdDeviation="14" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="1024" height="1024" rx="220" fill="url(#bg)"/><path d="M126 300 300 126h424l174 174v424L724 898H300L126 724Z" fill="none" stroke="#263b4c" stroke-width="22"/><circle cx="512" cy="512" r="326" fill="none" stroke="#38677e" stroke-width="7"/><circle cx="512" cy="512" r="292" fill="#020609" stroke="#b78227" stroke-width="12"/><path d="M512 205 222 778h112l72-144h212l72 144h112L512 205Zm0 207 63 130H449l63-130Z" fill="url(#g)" filter="url(#x)"/><path d="M512 332 374 611h72l66-134 66 134h72L512 332Z" fill="#06101a" stroke="#efbd50" stroke-width="10"/><circle cx="512" cy="512" r="360" fill="none" stroke="#e9b747" stroke-width="4" opacity=".55"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+<defs>
+<radialGradient id="bg"><stop stop-color="#173a55"/><stop offset=".5" stop-color="#07111a"/><stop offset="1" stop-color="#010305"/></radialGradient>
+<linearGradient id="gold" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#fff2a9"/><stop offset=".28" stop-color="#efbd50"/><stop offset=".6" stop-color="#8c5818"/><stop offset=".84" stop-color="#f4c35a"/><stop offset="1" stop-color="#6b4314"/></linearGradient>
+<filter id="glow"><feGaussianBlur stdDeviation="13" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1024" height="1024" rx="220" fill="url(#bg)"/>
+<path d="M128 294 294 128h436l166 166v436L730 896H294L128 730Z" fill="none" stroke="#263e50" stroke-width="24"/>
+<circle cx="512" cy="512" r="315" fill="#02070b" stroke="#a97725" stroke-width="13"/>
+<circle cx="512" cy="512" r="360" fill="none" stroke="#43bff0" stroke-width="4" opacity=".28"/>
+<path d="M512 194 218 792h128l70-151h192l70 151h128L512 194Zm0 215 58 126H454l58-126Z" fill="url(#gold)" filter="url(#glow)"/>
+<path d="M512 342 376 620h74l62-130 62 130h74L512 342Z" fill="#06121d" stroke="#efbd50" stroke-width="9"/>
+</svg>

@@ -1,24 +1,245 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#03070c"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><title>Apex Command</title>
-<style>
-:root{--b:#03070c;--p:#07111a;--line:#17465f;--blue:#47caff;--gold:#f2bd49;--green:#63dfa0;--red:#ff655e;--txt:#eef8ff;--mut:#89a5b5}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -20%,#10283a,#04080d 38%,#010305 80%);color:var(--txt);font-family:Inter,system-ui,-apple-system,sans-serif;min-height:100vh}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(#fff .55px,transparent .7px);background-size:29px 29px}.app{max-width:720px;margin:auto;padding:env(safe-area-inset-top) 12px calc(90px + env(safe-area-inset-bottom));min-height:100vh}header{height:66px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #12354a}.brand{font-weight:900;letter-spacing:2px;color:var(--gold)}.logo{width:38px;height:38px;border:1px solid #ad812d;border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:900;box-shadow:0 0 18px #e8b23e33}h1{font-size:28px;margin:22px 0 5px}.sub{color:#9cdfff;line-height:1.5}.card{background:linear-gradient(145deg,#08131dec,#050a10ed);border:1px solid var(--line);border-radius:14px;box-shadow:inset 0 0 25px #0c86bc12}.quote{padding:15px;margin:15px 0;color:#d5effb}.quote small{display:block;color:var(--mut);text-align:right;margin-top:8px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.stat{text-align:center;padding:13px 5px}.stat b{font-size:24px;display:block;color:var(--blue)}.stat:nth-child(1)b,.stat:nth-child(4)b{color:var(--gold)}.stat span{font-size:9px;color:var(--mut);text-transform:uppercase}.section{display:flex;justify-content:space-between;margin:20px 2px 8px;font-size:12px;letter-spacing:1px}.list{overflow:hidden}.row{display:flex;justify-content:space-between;gap:10px;padding:13px;border-bottom:1px solid #123143}.row:last-child{border:0}.row small{color:var(--mut)}.ai{display:flex;align-items:center;gap:12px;padding:15px;margin-top:14px}.orb{width:48px;height:48px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--blue);font-weight:900;font-size:20px;box-shadow:0 0 22px #47caff42}.page{display:none}.page.active{display:block}.form{padding:15px}.form label{display:block;font-size:11px;color:var(--mut);margin:12px 0 5px}.form input,.form select,.form textarea{width:100%;padding:12px;border:1px solid #1b506b;border-radius:9px;background:#03090e;color:#fff;font:inherit}.form textarea{min-height:105px}.primary{width:100%;margin-top:15px;padding:13px;border:1px solid #a67b27;border-radius:9px;background:#2d2009;color:#ffd875;font-weight:900}.nav{position:fixed;z-index:20;left:50%;transform:translateX(-50%);bottom:0;width:min(720px,100%);display:flex;overflow-x:auto;background:#02060bea;border-top:1px solid #153b50;backdrop-filter:blur(15px);padding:7px 4px calc(7px + env(safe-area-inset-bottom))}.nav button{min-width:76px;flex:1;background:none;border:0;color:#78919f;font-size:9px;padding:7px 2px}.nav i{font-style:normal;display:block;font-size:19px;margin-bottom:3px}.nav .active{color:var(--blue)}.overlay{position:fixed;z-index:99;inset:0;background:#000c;display:none;place-items:center;padding:22px}.overlay.show{display:grid}.modal{width:min(430px,100%);background:#06111b;border:1px solid var(--blue);border-radius:18px;padding:22px;text-align:center;box-shadow:0 0 55px #2bb7f15c}.droid{font-size:70px;display:inline-block;filter:drop-shadow(0 0 14px #47caff);animation:bob 1.15s ease-in-out infinite alternate}.scan{height:2px;background:var(--blue);box-shadow:0 0 12px var(--blue);animation:scan 1.5s linear infinite;margin:8px auto 14px;width:75%}.modal button{width:100%;padding:12px;margin-top:8px;border-radius:9px;background:#08151f;border:1px solid #286e91;color:#ccefff;font-weight:800}.modal button.gold{border-color:#a97c27;color:#ffd774}.toast{position:fixed;z-index:80;left:50%;top:calc(18px + env(safe-area-inset-top));transform:translateX(-50%) translateY(-140px);width:min(500px,90%);padding:13px;border:1px solid var(--blue);border-radius:12px;background:#07131eea;color:#ccefff;box-shadow:0 0 30px #38bff84d;transition:.5s}.toast.show{transform:translateX(-50%) translateY(0)}.tiny-droid{position:fixed;z-index:30;font-size:27px;cursor:pointer;filter:drop-shadow(0 0 7px #47caff);animation:peek 2s ease-in-out infinite;user-select:none}.badge{font-size:10px;border:1px solid #27607c;border-radius:99px;padding:3px 7px;color:#9ddfff}@keyframes bob{to{transform:translateY(-12px) rotate(4deg)}}@keyframes scan{0%{opacity:.2;transform:translateY(-8px)}50%{opacity:1}100%{opacity:.2;transform:translateY(8px)}}@keyframes peek{50%{transform:translateY(-7px) rotate(-8deg)}}@media(max-width:430px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:25px}}
-</style></head><body><div class="app"><header><div class="brand">APEX COMMAND</div><div class="logo">A</div></header>
-<section class="page active" id="home"><h1 id="greet">Good evening, Teri.</h1><p class="sub">Your operation is online. Here’s what deserves your attention today.</p><div class="card quote">“I’ve calculated the odds of today going exactly as planned. I recommend we don’t discuss the odds.”<small>— Apex AI</small></div><div class="stats"><div class="card stat"><b id="fc">3</b><span>Open Follow-Ups</span></div><div class="card stat"><b id="cc">2</b><span>Captures</span></div><div class="card stat"><b>5</b><span>Outlets</span></div><div class="card stat"><b>3</b><span>Reports</span></div></div><div class="section"><b>RECENT CAPTURES</b><span onclick="go('captures')" style="color:var(--blue)">VIEW ALL</span></div><div class="card list" id="recent"></div><div class="card ai" onclick="go('ai')"><div class="orb">A</div><div><b style="color:var(--blue)">APEX AI</b><div style="font-size:13px;margin-top:4px">Ask Apex AI anything, Director.</div></div></div></section>
-<section class="page" id="ai"><h1>Apex AI</h1><p class="sub">Your intelligent operational and leadership assistant.</p><div class="card form"><label>ASK APEX AI</label><textarea id="ask" placeholder="What should I focus on today?"></textarea><button class="primary" onclick="askAI()">ANALYZE</button><p id="answer"></p></div></section>
-<section class="page" id="captures"><h1>Captures</h1><p class="sub">Document what matters.</p><div class="card form"><label>OUTLET</label><select id="co"><option>360</option><option>Waterfront</option><option>J's</option><option>Cap Rock</option><option>Summit</option></select><label>TYPE</label><select id="ct"><option>Observation</option><option>Recognition</option><option>Coaching</option><option>Operational Issue</option></select><label>PRIORITY</label><select id="cp"><option>Normal</option><option>High</option><option>Critical</option></select><label>NOTES</label><textarea id="cn"></textarea><button class="primary" onclick="saveCap()">SAVE CAPTURE</button></div><div class="section"><b>CAPTURE LOG</b></div><div class="card list" id="caplog"></div></section>
-<section class="page" id="followups"><h1>Follow-Ups</h1><p class="sub">Stay on top of what drives action.</p><div class="card form"><label>ACTION</label><input id="ft"><label>OUTLET</label><select id="fo"><option>360</option><option>Waterfront</option><option>J's</option><option>Cap Rock</option><option>Summit</option></select><button class="primary" onclick="saveFu()">ADD FOLLOW-UP</button></div><div class="section"><b>OPEN ACTIONS</b></div><div class="card list" id="fulog"></div></section>
-<section class="page" id="reports"><h1>Reports</h1><p class="sub">Insightful. Professional. Fast.</p><div class="card list"><div class="row">Daily Director Summary <span class="badge">READY</span></div><div class="row">Outlet Performance Report <span class="badge">TEMPLATE</span></div><div class="row">Employee Development Report <span class="badge">TEMPLATE</span></div><div class="row">Guest Experience Report <span class="badge">TEMPLATE</span></div></div></section>
-<section class="page" id="timeline"><h1>Timeline</h1><p class="sub">See the full picture.</p><div class="card list" id="timelog"></div></section>
-<section class="page" id="outlets"><h1>Outlets</h1><p class="sub">Performance at a glance.</p><div class="card list"><div class="row">360 <span style="color:var(--green)">● Operational</span></div><div class="row">Waterfront <span style="color:var(--green)">● Operational</span></div><div class="row">J's <span style="color:var(--gold)">● Attention</span></div><div class="row">Cap Rock <span style="color:var(--green)">● Operational</span></div><div class="row">Summit <span style="color:var(--green)">● Operational</span></div></div></section>
-<section class="page" id="documents"><h1>Documents</h1><p class="sub">What you need, at your fingertips.</p><div class="card form"><input id="df" type="file"><button class="primary" onclick="addDoc()">ADD DOCUMENT</button></div><div class="section"><b>LIBRARY</b></div><div class="card list" id="docs"><div class="row">Director Playbook <small>PDF</small></div><div class="row">Training Standards <small>PDF</small></div><div class="row">Service Excellence Guide <small>PDF</small></div></div></section></div>
-<nav class="nav"><button class="active" data-p="home" onclick="go('home')"><i>⌂</i>HOME</button><button data-p="ai" onclick="go('ai')"><i>◉</i>AI</button><button data-p="captures" onclick="go('captures')"><i>◎</i>CAPTURES</button><button data-p="followups" onclick="go('followups')"><i>✓</i>FOLLOW-UPS</button><button data-p="reports" onclick="go('reports')"><i>▥</i>REPORTS</button><button data-p="timeline" onclick="go('timeline')"><i>≡</i>TIMELINE</button><button data-p="outlets" onclick="go('outlets')"><i>⌖</i>OUTLETS</button><button data-p="documents" onclick="go('documents')"><i>▤</i>DOCS</button></nav>
-<div class="toast" id="toast">◉ &nbsp; <b>Unidentified maintenance unit detected...</b> Something is hiding in Apex Command.</div>
-<div class="overlay" id="found"><div class="modal"><div style="color:var(--blue);font-weight:900;letter-spacing:1px">DROID DISCOVERED!</div><h2 id="droidName">BX-7</h2><div class="droid">🤖</div><div class="scan"></div><p id="droidText">This little unit has joined your command team.</p><button class="gold" onclick="droidAction()">ACTIVATE DROID</button><button onclick="closeDroid()">RETURN TO COMMAND</button></div></div>
-<script>
-const dc=[{o:"360",t:"Recognition",n:"Great teamwork during rush"},{o:"Waterfront",t:"Observation",n:"Guest recovery win"}],dfu=[{o:"360",t:"Follow up on training"},{o:"Waterfront",t:"Review menu timing"},{o:"J's",t:"New hire check-in"}];let caps=JSON.parse(localStorage.apexCaps||"null")||dc,fus=JSON.parse(localStorage.apexFus||"null")||dfu,tl=JSON.parse(localStorage.apexTimeline||"[]");const droids=[["BX-7","A tiny operations droid. BX-7 just boosted morale by 12%."],["M4-K","Maintenance specialist. M4-K reports: everything is probably fine."],["R0-GR","Recon unit. R0-GR found no problems, but looked extremely busy doing it."],["PIP-3","Hospitality protocol droid. PIP-3 insists great service is a superpower."]];
-function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}function go(id){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".nav button").forEach(x=>x.classList.toggle("active",x.dataset.p===id));scrollTo(0,0);render();maybeDroid(id)}
-function render(){cc.textContent=caps.length;fc.textContent=fus.length;let r=caps.slice().reverse().map(x=>`<div class="row"><span>${esc(x.o)} — ${esc(x.n)}</span><small>${esc(x.t)}</small></div>`).join("");recent.innerHTML=caplog.innerHTML=r||'<div class="row">No captures yet.</div>';fulog.innerHTML=fus.map((x,i)=>`<div class="row"><span>${esc(x.o)} — ${esc(x.t)}</span><button onclick="doneFu(${i})" style="border:0;background:none;color:var(--green)">COMPLETE</button></div>`).join("")||'<div class="row">All clear.</div>';timelog.innerHTML=tl.slice().reverse().map(x=>`<div class="row"><span>${esc(x.t)}</span><small>${esc(x.d)}</small></div>`).join("")||'<div class="row">No recent activity.</div>'}
-function log(t){tl.push({t,d:new Date().toLocaleString()});localStorage.apexTimeline=JSON.stringify(tl)}function saveCap(){if(!cn.value.trim())return alert("Add notes first.");caps.push({o:co.value,t:ct.value,n:cn.value.trim()});localStorage.apexCaps=JSON.stringify(caps);log("Capture added: "+co.value+" — "+cn.value.trim());cn.value="";render()}function saveFu(){if(!ft.value.trim())return alert("Add an action first.");fus.push({o:fo.value,t:ft.value.trim()});localStorage.apexFus=JSON.stringify(fus);log("Follow-up created: "+fo.value+" — "+ft.value.trim());ft.value="";render()}function doneFu(i){log("Follow-up completed: "+fus[i].t);fus.splice(i,1);localStorage.apexFus=JSON.stringify(fus);render()}function askAI(){answer.innerHTML=ask.value.trim()?`<b style="color:var(--blue)">Apex AI:</b> Test connection received. The full AI build will use captures, follow-ups, reports, timeline, outlets, and documents as operational context.`:"Enter a question first."}function addDoc(){let f=df.files[0];if(!f)return alert("Choose a document.");docs.innerHTML=`<div class="row">${esc(f.name)} <small>LOCAL TEST</small></div>`+docs.innerHTML;log("Document added: "+f.name);df.value=""}
-function maybeDroid(page){let seen=JSON.parse(localStorage.apexDroids||"[]");if(seen.length>=droids.length)return;if(Math.random()>.42)return;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),3500);setTimeout(()=>{let e=document.createElement("div");e.className="tiny-droid";e.textContent="🤖";e.style.left=(8+Math.random()*80)+"%";e.style.top=(18+Math.random()*60)+"%";e.title="What is that?";e.onclick=()=>discover(e);document.body.appendChild(e);setTimeout(()=>e.remove(),12000)},1800)}
-function discover(e){e.remove();let seen=JSON.parse(localStorage.apexDroids||"[]"),idx=seen.length%droids.length;droidName.textContent=droids[idx][0];droidText.textContent=droids[idx][1];found.dataset.idx=idx;found.classList.add("show")}function droidAction(){let idx=+found.dataset.idx,seen=JSON.parse(localStorage.apexDroids||"[]");if(!seen.includes(idx))seen.push(idx);localStorage.apexDroids=JSON.stringify(seen);log("Hidden droid discovered: "+droids[idx][0]);droidText.innerHTML="<b style='color:var(--gold)'>MISSION BONUS:</b> "+(["Leadership boost activated. Go recognize someone doing great work today.","Efficiency protocol engaged. Pick one follow-up and knock it out.","Recon complete. Check an outlet you haven't visited recently.","Hospitality boost engaged. Find one guest-experience win worth celebrating."][idx]));render()}function closeDroid(){found.classList.remove("show")}
-let h=new Date().getHours();greet.textContent=`Good ${h<12?"morning":h<17?"afternoon":"evening"}, Teri.`;render();setTimeout(()=>maybeDroid("home"),7000);if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#03070c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Apex Command">
+  <title>Apex Command</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg">
+  <link rel="apple-touch-icon" href="icons/icon-512.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="loginView" class="auth-shell">
+    <div class="auth-stars"></div>
+    <main class="auth-card">
+      <div class="apex-mark large">A</div>
+      <div class="auth-brand">APEX COMMAND</div>
+      <div class="auth-tag">LEAD • ALIGN • ELEVATE</div>
+
+      <div class="auth-hotel-wrap">
+        <img src="assets/hotel.webp" alt="Resort" class="auth-hotel">
+        <div class="scanlines"></div>
+      </div>
+
+      <p class="auth-copy">Director-level leadership. Operational excellence. Stronger outlets. Stronger teams.</p>
+
+      <form id="loginForm" class="auth-form">
+        <label>USER</label>
+        <input id="loginUser" autocomplete="username" value="Teri" aria-label="User">
+        <label>PASSWORD</label>
+        <input id="loginPass" type="password" autocomplete="current-password" placeholder="Enter password" aria-label="Password">
+        <div class="auth-row">
+          <label class="check"><input id="rememberMe" type="checkbox" checked> Remember me</label>
+          <button type="button" class="link-btn" id="resetPasswordBtn">Reset local password</button>
+        </div>
+        <button class="gold-btn" type="submit">SIGN IN</button>
+      </form>
+
+      <button class="ghost-btn" id="biometricBtn" type="button">◎ SIGN IN WITH DEVICE</button>
+      <div id="firstRunNote" class="first-run-note">
+        First launch: enter any password you want. Apex Command will save it only on this device for testing.
+      </div>
+      <div class="secure-note">Local test build • Offline capable • Your data stays on this device</div>
+    </main>
+  </div>
+
+  <div id="appView" class="hidden">
+    <div class="app-shell">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn" aria-label="Menu">☰</button>
+        <div class="top-title"><span class="top-apex">A</span> APEX COMMAND</div>
+        <div class="top-actions"><button class="top-bell" aria-label="Notifications">⌁</button><button id="profileBtn" class="profile-chip" aria-label="Profile">T</button></div>
+      </header>
+
+      <main id="pageHost">
+        <section class="page active" data-page="home">
+          <div class="hero-grid">
+            <div>
+              <h1 id="greeting">Good morning, Teri.</h1>
+              <p class="sub">Your operation is online. Here’s what deserves your attention today.</p>
+              <div class="quote-card">
+                <span class="quote-mark">“</span>
+                <div>
+                  <div id="dailyQuote">I’ve calculated the odds of today going exactly as planned. I recommend we don’t discuss the odds.</div>
+                  <small>— Apex AI</small>
+                </div>
+              </div>
+            </div>
+
+            <button class="hotel-holo" id="hotelHoloBtn" aria-label="Open outlet overview">
+              <img src="assets/hotel.webp" alt="Resort hologram">
+              <div class="holo-grid"></div>
+              <div class="holo-ring r1"></div>
+              <div class="holo-ring r2"></div>
+              <div class="holo-label">OPERATIONS ONLINE</div>
+            </button>
+          </div>
+
+          <div class="section-head"><b>TODAY'S PRIORITIES</b><button data-go="timeline">VIEW ALL</button></div>
+          <div class="priority-grid">
+            <button class="metric gold" data-go="followups"><strong id="metricFollowups">0</strong><span>OPEN<br>FOLLOW-UPS</span></button>
+            <button class="metric violet" data-go="captures"><strong id="metricCaptures">0</strong><span>NEW<br>CAPTURES</span></button>
+            <button class="metric green" data-go="outlets"><strong id="metricAttention">0</strong><span>OUTLETS<br>NEEDING ATTENTION</span></button>
+            <button class="metric orange" data-go="reports"><strong id="metricReports">0</strong><span>REPORTS<br>THIS WEEK</span></button>
+          </div>
+
+          <div class="two-col">
+            <div>
+              <div class="section-head"><b>RECENT CAPTURES</b><button data-go="captures">VIEW ALL</button></div>
+              <div class="panel list" id="homeCaptureList"></div>
+            </div>
+            <div>
+              <div class="section-head"><b>OUTLETS OVERVIEW</b><button data-go="outlets">VIEW ALL</button></div>
+              <div class="panel list" id="homeOutletList"></div>
+            </div>
+          </div>
+
+          <button class="panel ai-launch" data-go="ai">
+            <div class="ai-orb">A</div>
+            <div><b>APEX AI ASSISTANT</b><span>Ask Apex AI anything, Director.</span></div>
+            <div class="chev">›</div>
+          </button>
+
+          <div class="quick-grid">
+            <button class="quick" data-go="captures"><span>◎</span><b>QUICK CAPTURE</b><small>Capture a moment, insight, or observation.</small></button>
+            <button class="quick" data-go="followups"><span>✓</span><b>ADD FOLLOW-UP</b><small>Create a follow-up and assign action.</small></button>
+            <button class="quick" data-go="timeline"><span>◷</span><b>VIEW TIMELINE</b><small>See everything in chronological order.</small></button>
+          </div>
+
+          <button id="scanDroidBtn" class="droid-signal">
+            <div class="mini-droid">◉</div>
+            <div><b>UNIDENTIFIED DROID SIGNAL</b><span>A small unit may be hiding somewhere in the system.</span></div>
+            <strong>BEGIN SCAN</strong>
+          </button>
+
+          <div class="section-head droid-headline"><b>HIDDEN DROID ENCOUNTERS</b><span id="droidProgress">0 / 5 FOUND</span></div>
+          <div id="droidRoster" class="droid-roster"></div>
+        </section>
+
+        <section class="page" data-page="ai">
+          <div class="page-title"><h1>Apex AI</h1><p>Leadership support, operational analysis, drafting, and planning.</p></div>
+          <div class="ai-hero"><div class="ai-orb giant">A</div><h2>How can I support your mission today?</h2></div>
+          <div class="prompt-grid">
+            <button class="prompt-chip">Summarize today’s activity</button>
+            <button class="prompt-chip">Draft an outlet performance update</button>
+            <button class="prompt-chip">What outlets need my attention?</button>
+            <button class="prompt-chip">Show me open follow-ups</button>
+            <button class="prompt-chip">Help me write a recognition note</button>
+          </div>
+          <div id="aiThread" class="panel chat-thread"></div>
+          <div class="chat-box"><textarea id="aiInput" placeholder="Ask Apex AI..."></textarea><button id="aiSend" class="blue-btn">SEND</button></div>
+          <p class="fineprint">This test build uses an on-device assistant for app data. A production AI endpoint can be connected later without exposing an API key in the app.</p>
+        </section>
+
+        <section class="page" data-page="captures">
+          <div class="page-title"><h1>Captures</h1><p>Document what matters and keep context attached.</p></div>
+          <form id="captureForm" class="panel form-grid">
+            <label>OUTLET<select id="capOutlet"></select></label>
+            <label>TYPE<select id="capType"><option>Observation</option><option>Recognition</option><option>Coaching</option><option>Operational Issue</option><option>Guest Experience</option></select></label>
+            <label>PERSON<input id="capPerson" placeholder="Optional"></label>
+            <label>PRIORITY<select id="capPriority"><option>Normal</option><option>Medium</option><option>High</option><option>Critical</option></select></label>
+            <label class="span2">NOTES<textarea id="capNotes" placeholder="Enter details..." required></textarea></label>
+            <label class="span2">PHOTOS<input id="capPhotos" type="file" accept="image/*" multiple></label>
+            <button class="blue-btn span2" type="submit">SAVE CAPTURE</button>
+          </form>
+          <div class="section-head"><b>CAPTURE LOG</b><button id="exportCapturesBtn">EXPORT JSON</button></div>
+          <div id="captureList" class="panel list"></div>
+        </section>
+
+        <section class="page" data-page="followups">
+          <div class="page-title"><h1>Follow-Ups</h1><p>Track ownership, due dates, priority, and completion.</p></div>
+          <form id="followupForm" class="panel form-grid">
+            <label class="span2">ACTION<input id="fuTitle" required placeholder="What needs action?"></label>
+            <label>OUTLET<select id="fuOutlet"></select></label>
+            <label>OWNER<input id="fuOwner" placeholder="Optional"></label>
+            <label>DUE DATE<input id="fuDue" type="date"></label>
+            <label>PRIORITY<select id="fuPriority"><option>Low</option><option>Medium</option><option>High</option><option>Critical</option></select></label>
+            <button class="gold-btn span2" type="submit">ADD FOLLOW-UP</button>
+          </form>
+          <div class="filter-row"><button class="filter active" data-filter="open">OPEN</button><button class="filter" data-filter="completed">COMPLETED</button><button class="filter" data-filter="all">ALL</button></div>
+          <div id="followupList" class="panel list"></div>
+        </section>
+
+        <section class="page" data-page="reports">
+          <div class="page-title"><h1>Reports</h1><p>Generate executive-ready summaries from live app data.</p></div>
+          <div class="report-actions">
+            <button class="green-btn" data-report="daily">+ DAILY DIRECTOR SUMMARY</button>
+            <button class="green-btn" data-report="outlet">+ OUTLET PERFORMANCE REPORT</button>
+            <button class="green-btn" data-report="followups">+ FOLLOW-UP STATUS REPORT</button>
+          </div>
+          <div id="reportList" class="panel list"></div>
+          <div id="reportPreview" class="panel report-preview hidden"></div>
+        </section>
+
+        <section class="page" data-page="timeline">
+          <div class="page-title"><h1>Timeline</h1><p>Every capture, follow-up, report, document, and droid discovery.</p></div>
+          <div id="timelineList" class="timeline-list"></div>
+        </section>
+
+        <section class="page" data-page="outlets">
+          <div class="page-title"><h1>Outlets</h1><p>Performance at a glance.</p></div>
+          <div id="outletList" class="outlet-grid"></div>
+        </section>
+
+        <section class="page" data-page="documents">
+          <div class="page-title"><h1>Documents</h1><p>Policies, playbooks, reports, and resources.</p></div>
+          <div class="panel upload-box">
+            <input id="docUpload" type="file" multiple>
+            <button id="addDocsBtn" class="blue-btn">ADD DOCUMENTS</button>
+          </div>
+          <div id="documentList" class="panel list"></div>
+          <p class="fineprint">Document names and metadata are persisted in this static test build. Browser security prevents reopening original local files after a reload unless cloud storage is connected.</p>
+        </section>
+      </main>
+
+      <nav class="bottom-nav">
+        <button class="active" data-go="home"><i>⌂</i><span>HOME</span></button>
+        <button data-go="ai"><i>◉</i><span>AI</span></button>
+        <button data-go="captures"><i>◎</i><span>CAPTURES</span></button>
+        <button data-go="followups"><i>✓</i><span>FOLLOW-UPS</span></button>
+        <button data-go="reports"><i>▥</i><span>REPORTS</span></button>
+        <button data-go="timeline"><i>◷</i><span>TIMELINE</span></button>
+        <button data-go="outlets"><i>⌖</i><span>OUTLETS</span></button>
+        <button data-go="documents"><i>▤</i><span>DOCS</span></button>
+      </nav>
+    </div>
+  </div>
+
+  <div id="drawer" class="drawer hidden">
+    <div class="drawer-card">
+      <div class="apex-mark">A</div>
+      <h3>Apex Command</h3>
+      <button data-go="home">Home</button>
+      <button data-go="ai">Apex AI</button>
+      <button data-go="captures">Captures</button>
+      <button data-go="followups">Follow-Ups</button>
+      <button data-go="reports">Reports</button>
+      <button data-go="timeline">Timeline</button>
+      <button data-go="outlets">Outlets</button>
+      <button data-go="documents">Documents</button>
+      <button id="logoutBtn" class="danger-btn">SIGN OUT</button>
+    </div>
+  </div>
+
+  <div id="droidOverlay" class="overlay hidden">
+    <div class="droid-modal">
+      <div class="scan-title">DROID DISCOVERED</div>
+      <h2 id="droidName">BX-7</h2>
+      <div class="droid-visual"><div class="droid-head">◉</div><div class="droid-body"></div></div>
+      <div class="scan-beam"></div>
+      <p id="droidText"></p>
+      <div id="droidBonus" class="bonus"></div>
+      <button id="activateDroidBtn" class="gold-btn">ACTIVATE UNIT</button>
+      <button id="closeDroidBtn" class="ghost-btn">RETURN TO COMMAND</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
